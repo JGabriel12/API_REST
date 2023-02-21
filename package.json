@@ -1,14 +1,14 @@
 {
   "name": "api-rest",
   "version": "1.0.0",
-  "description": "<h1>FIRST COMMIT</h1>",
+  "description": "An API REST",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Gabriel Marinho",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
