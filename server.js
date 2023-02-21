@@ -3,6 +3,6 @@ const app = express()
 
 app
   .get('/', (req, res) => {
-    res.send('My app test!')
+    res.send('Docker container test 4')
   })
   .listen(3000)
