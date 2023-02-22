@@ -26,15 +26,7 @@ services:
       ports:
         - 3306:3306
       environment:
-<<<<<<< HEAD
         MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
         MYSQL_DATABASE: ${DB_DATABASE}
         MYSQL_USER: ${DB_USER}
         MYSQL_PASSWORD: ${DB_PASSWORD}
-=======
-        MYSQL_ROOT_PASSWORD: gabriel123
-        MYSQL_DATABASE: API_REST
-        MYSQL_USER: gabriel
-        MYSQL_PASSWORD: gabriel123
->>>>>>> e67e266d4808d6838be9e418800ff5768780f93d
-        TZ: America/Sao_Paulo
