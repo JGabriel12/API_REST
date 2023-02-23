@@ -1,8 +1,7 @@
-const express = require('express');
+import app from './app';
 
-const app = express();
-app
-  .get('/', (req, res) => {
-    res.send('Docker container test 6');
-  })
-  .listen(3000);
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server running in port${port}.`);
+  console.log(`http://localhost:${port}`);
+});
