@@ -10,7 +10,7 @@ services:
     volumes:
       - .:/usr/src/app
 
-  
+
   mysql:
       container_name: Container_mysql
       hostname: mysql
@@ -21,7 +21,7 @@ services:
         - --character-set-server=utf8mb4
         - --collation-server=utf8mb4_unicode_ci
         - --innodb_force_recovery=0
-      volumes: 
+      volumes:
         - C:\Users\Gabriel\Desktop\MySQL_API:/var/lib/mysql
       ports:
         - 3306:3306
