@@ -6,7 +6,7 @@ export default class User extends Model {
     super.init(
       {
         name: {
-          Type: Sequelize.STRING,
+          type: Sequelize.STRING,
           defaultValue: '',
           validate: {
             len: {
@@ -17,7 +17,7 @@ export default class User extends Model {
         },
 
         email: {
-          Type: Sequelize.STRING,
+          type: Sequelize.STRING,
           defaultValue: '',
           validate: {
             isEmail: {
@@ -27,12 +27,12 @@ export default class User extends Model {
         },
 
         password_hash: {
-          Type: Sequelize.STRING,
+          type: Sequelize.STRING,
           defaultValue: '',
         },
 
         password: {
-          Type: Sequelize.VIRTUAL,
+          type: Sequelize.VIRTUAL,
           defaultValue: '',
           validate: {
             len: {
