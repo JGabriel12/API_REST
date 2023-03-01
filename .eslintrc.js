@@ -13,8 +13,15 @@ module.exports = {
     'no-console': 'off',
     'class-methods-use-this': 'off',
     'import/first': 'off',
-    'import/no-extraneous-dependencies': ['error', { devDependencies: false }],
     'no-param-reassign': 'off',
     'comma-dangle': 'off',
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: false,
+        optionalDependencies: false,
+        peerDependencies: false,
+      },
+    ],
   },
 };
