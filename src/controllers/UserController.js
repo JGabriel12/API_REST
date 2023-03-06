@@ -32,11 +32,7 @@ class HomeController {
 
   async update(req, res) {
     try {
-      const { id } = req.params;
-      // Check if id exist
-      if (!id) return res.status(400).json({ Errors: 'ID not found' });
-
-      const user = await User.findByPk(id);
+      const user = await User.findByPk(req.userId);
 
       // Check if user exist
       if (!user) return res.status(400).json({ Errors: 'User not found' });
@@ -50,11 +46,7 @@ class HomeController {
 
   async delete(req, res) {
     try {
-      const { id } = req.params;
-
-      if (!id) return res.status(400).json({ Error: 'ID not found' });
-
-      const user = await User.findByPk(id);
+      const user = await User.findByPk(req.userId);
 
       if (!user) return res.status(400).json({ Error: 'User not found' });
 
