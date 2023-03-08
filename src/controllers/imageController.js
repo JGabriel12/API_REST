@@ -1,6 +1,6 @@
 class ImageController {
   async store(req, res) {
-    res.json('Index');
+    res.json(req.file);
   }
 }
 

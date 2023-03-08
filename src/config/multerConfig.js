@@ -7,8 +7,8 @@ export default {
       cb(null, resolve(__dirname, '..', '..', 'uploads'));
     },
     filename: (req, file, cb) => {
-      const random = () => Math.floor(Math.random() * 10000 + 10000);
-      const filename = `${Date.now()}_${random}${extname(file.originalname)}`;
+      const random = () => Math.floor(Math.random() * 10000 + 1000);
+      const filename = `${Date.now()}_${random()}${extname(file.originalname)}`;
 
       cb(null, filename);
     },
