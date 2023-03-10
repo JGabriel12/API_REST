@@ -1,9 +1,28 @@
 import Student from '../models/Aluno';
+import Image from '../models/Image';
 
 class StudentController {
   async index(req, res) {
     try {
-      const students = await Student.findAll();
+      const students = await Student.findAll({
+        attributes: [
+          'id',
+          'name',
+          'last_name',
+          'email',
+          'age',
+          'weight',
+          'height',
+        ],
+        order: [
+          ['id', 'DESC'],
+          [Image, 'id', 'DESC'],
+        ],
+        include: {
+          model: Image,
+          attributes: ['originalname', 'filename'],
+        },
+      });
       return res.status(200).json({ Students: students });
     } catch (error) {
       return res.status(400).json(error);
@@ -17,7 +36,25 @@ class StudentController {
         return res.status(400).json({ errors: 'Id not found!' });
       }
 
-      const students = await Student.findByPk(id);
+      const students = await Student.findByPk(id, {
+        attributes: [
+          'id',
+          'name',
+          'last_name',
+          'email',
+          'age',
+          'weight',
+          'height',
+        ],
+        order: [
+          ['id', 'DESC'],
+          [Image, 'id', 'DESC'],
+        ],
+        include: {
+          model: Image,
+          attributes: ['originalname', 'filename'],
+        },
+      });
       if (!students) {
         return res.status(400).json({ errors: 'Cannot find student' });
       }
