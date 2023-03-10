@@ -13,11 +13,14 @@ class ImageController {
         });
       }
 
-      const { originalname, filename } = req.file;
-      const { aluno_id } = req.body;
-      const image = await Image.create({ originalname, filename, aluno_id });
-
-      return res.json(image);
+      try {
+        const { originalname, filename } = req.file;
+        const { aluno_id } = req.body;
+        const image = await Image.create({ originalname, filename, aluno_id });
+        return res.json(image);
+      } catch (e) {
+        return res.status(400).json({ error: 'Cannot find student' });
+      }
     });
   }
 }
